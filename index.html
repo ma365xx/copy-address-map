@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Google Map with Copy Feature</title>
+    <script>
+        function copyToClipboard(address) {
+            const tempInput = document.createElement('input');
+            document.body.appendChild(tempInput);
+            tempInput.value = address;
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Address copied: ' + address);
+        }
+    </script>
+</head>
+<body>
+
+<h1>Click a marker to copy the address</h1>
+
+<!-- Embed Google My Map -->
+<iframe src="https://www.google.com/maps/d/u/0/edit?mid=1m5LgYmd1UDYMrSXpF3qTGcKU0Xqyquw&ll=32.774559390262525%2C-117.11053700000001&z=12" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+<!-- List of Locations with Copy Button -->
+<div>
+    <button onclick="copyToClipboard('123 Main St, San Diego, CA')">Copy Address 1</button><br>
+    <button onclick="copyToClipboard('456 Oak Ave, La Mesa, CA')">Copy Address 2</button><br>
+    <button onclick="copyToClipboard('789 Pine St, El Cajon, CA')">Copy Address 3</button>
+</div>
+
+</body>
+</html>
+
